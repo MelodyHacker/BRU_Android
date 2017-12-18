@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:padding="10dp"
+        android:paddingBottom="10dp"
+        android:paddingEnd="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingStart="10dp"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:id="@+id/name_event_lable_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/name"
+            android:textColor="@color/back" />
+
+        <TextView
+            android:id="@+id/description_event_lable_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/nameevent_item"
+            android:text="@string/description"
+            android:textColor="@color/back" />
+
+        <TextView
+            android:id="@+id/descriptionevent_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/description_event_lable_item"
+            android:paddingLeft="10dp"
+            android:textColor="@color/back" />
+
+        <TextView
+            android:id="@+id/date_start_eventlable_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/descriptionevent_item"
+            android:text="@string/datestart"
+            android:textColor="@color/back" />
+
+        <TextView
+            android:id="@+id/date_end_eventlable_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/date_start_event_item"
+            android:text="@string/dateend"
+            android:textColor="@color/back" />
+
+        <TextView
+            android:id="@+id/lat_event_lable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/date_end_event_item"
+            android:text="@string/lat"
+            android:textColor="@color/back"    android:visibility="invisible"/>
+
+        <TextView
+            android:id="@+id/long_event_lable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lat_event_item"
+            android:text="@string/lat"
+            android:textColor="@color/back"   android:visibility="invisible" />
+
+
+        <ImageView
+            android:id="@+id/imgevent1_item"
+            android:layout_below="@+id/long_event_item"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:padding="5dp"
+            android:layout_height="250dp"
+            android:layout_width="match_parent" />
+
+        <ImageView
+
+            android:id="@+id/imgevent2_item"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_below="@+id/imgevent1_item"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:padding="5dp" />
+
+        <ImageView
+
+            android:id="@+id/imgevent3_item"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_below="@+id/imgevent2_item"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:padding="5dp" />
+
+        <TextView
+            android:id="@+id/nameevent_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:textColor="@color/back"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/name_event_lable_item"
+            android:layout_toEndOf="@+id/name_event_lable_item" />
+
+        <TextView
+            android:id="@+id/date_start_event_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:textColor="@color/back"
+            android:layout_alignBaseline="@+id/date_start_eventlable_item"
+            android:layout_alignBottom="@+id/date_start_eventlable_item"
+            android:layout_toRightOf="@+id/date_start_eventlable_item"
+            android:layout_toEndOf="@+id/date_start_eventlable_item" />
+
+        <TextView
+            android:id="@+id/date_end_event_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:textColor="@color/back"
+            android:layout_below="@+id/date_start_eventlable_item"
+            android:layout_toRightOf="@+id/date_end_eventlable_item"
+            android:layout_toEndOf="@+id/date_end_eventlable_item" />
+
+        <TextView
+            android:id="@+id/lat_event_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:textColor="@color/back"
+            android:layout_alignBaseline="@+id/lat_event_lable"
+            android:layout_alignBottom="@+id/lat_event_lable"
+            android:layout_toRightOf="@+id/lat_event_lable"
+            android:layout_toEndOf="@+id/lat_event_lable"    android:visibility="invisible"/>
+
+        <TextView
+            android:id="@+id/long_event_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:textColor="@color/back"
+            android:layout_below="@+id/lat_event_item"
+            android:layout_toRightOf="@+id/long_event_lable"
+            android:layout_toEndOf="@+id/long_event_lable"   android:visibility="invisible" />
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

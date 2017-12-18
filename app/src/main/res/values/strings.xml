@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">MyBRU</string>
+    <string name="name">ชื่อ:</string>
+    <string name="datestart">วันเริ่มงาน:</string>
+    <string name="dateend">วันสิ้นสุดงาน:</string>
+    <string name="description">รายละเอียด:</string>
+    <string name="lat">Lat-Localtion:</string>
+    <string name="lng">Long-Localtion:</string>
+    <string name="place">Place:</string>
+    <string name="title_activity_maps">MyBRU</string>
+    <string name="number">เบอร์ติดต่อ:</string>
+    <string name="title_activity_main_map">แผนที่</string>
+    <string name="skip">ข้าม</string>
+    <string name="q">แนะนำการใช้งาน</string>
+    <string name="title_activity_maps_sctivity">Map</string>
+    <string name="title_activity_maps2">Map</string>
+</resources>

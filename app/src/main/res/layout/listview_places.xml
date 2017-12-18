@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <RelativeLayout android:layout_height="match_parent"
+        android:layout_width="200dp">
+
+        <TextView
+            android:id="@+id/name_event_lable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/name" />
+
+        <TextView
+            android:id="@+id/itemnameplace"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/name_event_lable" />
+
+        <TextView
+            android:id="@+id/description_event_lable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/name_event_lable"
+            android:text="@string/description" />
+
+        <TextView
+            android:id="@+id/description_place"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/itemnameplace"
+            android:layout_toRightOf="@+id/description_event_lable" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/imgplace"
+        android:layout_width="100dp"
+        android:layout_alignParentRight="true"
+        android:background="#FCFCFC"
+        android:padding="1dp"
+        android:layout_height="100dp" />
+
+</RelativeLayout>

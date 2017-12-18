@@ -1,0 +1,32 @@
+package com.example.tanon.mybru;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.Toast;
+
+/**
+ * Created by MelodyHacker on 11/2/2017.
+ */
+
+public class NotInterNet extends AppCompatActivity {
+
+
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.not_internet);
+        final ImageView imageView = (ImageView) findViewById(R.id.again);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(NotInterNet.this, MarkerOff.class);
+                startActivity(intent);
+            }
+        });
+        Toast.makeText(NotInterNet.this, "คุณไม่ได้เชื่อมต่ออินเตอร์เน็ต", Toast.LENGTH_LONG).show();
+        Toast.makeText(NotInterNet.this, "ลองอีกครั้ง", Toast.LENGTH_LONG).show();
+        Toast.makeText(NotInterNet.this, "หรือระบบมีปัญหาโปรดรายงานปัญหาจากปุ่ม Report", Toast.LENGTH_LONG).show();
+    }
+}
