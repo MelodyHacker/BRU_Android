@@ -44,7 +44,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     ProgressDialog mProgressDialog;
     JSONArray array;
     ViewFlipper viewFlipper;
-    String url = "https://tanonexecutioner.000webhostapp.com/upload/news/";
+    Url url = new Url();
+    String urlnew = url.imgnew;
     String img1, img2, img3;
     GoogleMap map;
     int zoom = 15;
@@ -81,9 +82,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         imgreport.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String urldir = "https://tanonexecutioner.000webhostapp.com/Report.php";
-                //  Toast.makeText(context, urldir,20).show();
-                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(urldir));
+                Intent intent = new Intent(MainActivity.this, Report.class);
                 startActivity(intent);
             }
         });
@@ -125,7 +124,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                new ReadJSON().execute("https://tanonexecutioner.000webhostapp.com/JsonNews.php");
+                new ReadJSON().execute(url.jsonnews);
             }
         });
 /////////////////////////////////////////////////////////////////////////////////////////////
@@ -204,11 +203,11 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                 startActivity(intent);
             }
             ImageView imageView1 = (ImageView) findViewById(R.id.new11);
-            Picasso.with(getApplicationContext()).load(url + img1).into(imageView1);
+            Picasso.with(getApplicationContext()).load(urlnew + img1).into(imageView1);
             ImageView imageView2 = (ImageView) findViewById(R.id.new12);
-            Picasso.with(getApplicationContext()).load(url + img2).into(imageView2);
+            Picasso.with(getApplicationContext()).load(urlnew + img2).into(imageView2);
             ImageView imageView3 = (ImageView) findViewById(R.id.new13);
-            Picasso.with(getApplicationContext()).load(url + img3).into(imageView3);
+            Picasso.with(getApplicationContext()).load(urlnew + img3).into(imageView3);
 
             //stopprogress
             mProgressDialog.dismiss();

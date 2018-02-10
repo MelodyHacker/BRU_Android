@@ -29,7 +29,7 @@ public class Phone extends AppCompatActivity {
     ProgressDialog mProgressDialog;
     String[] ar;
     ListView lv;
-
+    Url url=new Url();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,7 +40,7 @@ public class Phone extends AppCompatActivity {
             @Override
             public void run() {
                 //avd  10.0.2.2.json.php
-                new Phone.ReadJSON().execute("https://tanonexecutioner.000webhostapp.com/JsonPhones.php");
+                new Phone.ReadJSON().execute(url.jsonphone);
             }
         });
 

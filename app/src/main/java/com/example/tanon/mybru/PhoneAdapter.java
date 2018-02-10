@@ -28,7 +28,7 @@ public class PhoneAdapter extends ArrayAdapter<GetSetPhone> {
     Context context;
     int resource;
     public int ck;
-
+    Url url = new Url();
 
     public PhoneAdapter(Context context, int resource, ArrayList<GetSetPhone> getSetPhones) {
         super(context, resource, getSetPhones);
@@ -51,7 +51,7 @@ public class PhoneAdapter extends ArrayAdapter<GetSetPhone> {
             convertView = layoutInflater.inflate(R.layout.item_phone, null, true);
         }
         GetSetPhone getset = getItem(position);
-        String imgurl = "https://tanonexecutioner.000webhostapp.com/upload/phones/" + getset.getImagePhone();
+        String imgurl = url.imgphone + getset.getImagePhone();
 
 
         ImageView imageView1 = (ImageView) convertView.findViewById(R.id.img_phone);

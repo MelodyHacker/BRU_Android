@@ -25,7 +25,7 @@ import java.util.ArrayList;
 
 
 public class MainEvent extends AppCompatActivity {
-
+    Url url = new Url();
     ArrayList<GetSetEvent> arrayList;
     ListView lv;
     ProgressDialog mProgressDialog;
@@ -43,7 +43,7 @@ public class MainEvent extends AppCompatActivity {
             @Override
             public void run() {
                 //avd  10.0.2.2.json.php
-                new ReadJSON().execute("https://tanonexecutioner.000webhostapp.com/JsonEvents.php");
+                new ReadJSON().execute(url.jsonevent);
             }
         });
 
@@ -62,7 +62,7 @@ public class MainEvent extends AppCompatActivity {
             try {
                 JSONObject jsonObject = new JSONObject(content);
                 JSONArray jsonArray = jsonObject.getJSONArray("events");
-                if (jsonArray==null){
+                if (jsonArray == null) {
                     Intent intent = new Intent(MainEvent.this, NotInterNet.class);
                     startActivity(intent);
                 }

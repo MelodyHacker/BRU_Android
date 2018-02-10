@@ -25,6 +25,15 @@ public class NotInterNet extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        final ImageView img_report_internet = (ImageView) findViewById(R.id.report_notinternet);
+        img_report_internet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(NotInterNet.this, Report.class);
+                Toast.makeText(NotInterNet.this, "ขอบคุณที่รายงานปัญหา", Toast.LENGTH_LONG).show();
+                startActivity(intent);
+            }
+        });
         Toast.makeText(NotInterNet.this, "คุณไม่ได้เชื่อมต่ออินเตอร์เน็ต", Toast.LENGTH_LONG).show();
         Toast.makeText(NotInterNet.this, "ลองอีกครั้ง", Toast.LENGTH_LONG).show();
         Toast.makeText(NotInterNet.this, "หรือระบบมีปัญหาโปรดรายงานปัญหาจากปุ่ม Report", Toast.LENGTH_LONG).show();

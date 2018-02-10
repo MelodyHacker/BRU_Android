@@ -29,7 +29,7 @@ public class MarkerOff extends AppCompatActivity {
 
     ProgressDialog mProgressDialog;
     String[] ar;
-
+    Url url = new Url();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -42,7 +42,7 @@ public class MarkerOff extends AppCompatActivity {
                 @Override
                 public void run() {
                     //avd  10.0.2.2.json.php
-                    new MarkerOff.ReadJSON().execute("https://tanonexecutioner.000webhostapp.com/JsonPorilines.php");
+                    new MarkerOff.ReadJSON().execute(url.jsonporiline);
                 }
             });
         } else {

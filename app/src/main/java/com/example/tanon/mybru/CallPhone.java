@@ -26,7 +26,7 @@ public class CallPhone extends AppCompatActivity {
     ProgressDialog mProgressDialog;
     String call;
     int po;
-
+    Url url = new Url();
     ItemAdapter itemAdapter;
 
     @Override
@@ -41,7 +41,7 @@ public class CallPhone extends AppCompatActivity {
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                new ReadJSON().execute("https://tanonexecutioner.000webhostapp.com/JsonPhones.php");
+                new ReadJSON().execute(url.jsonphone);
             }
         });
         Toast.makeText(CallPhone.this, "กดเลือกรายการที่ต้องการเพื่อโทรออก",

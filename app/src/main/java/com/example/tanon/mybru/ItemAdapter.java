@@ -19,7 +19,7 @@ import java.util.ArrayList;
 
 public class ItemAdapter extends ArrayAdapter<GetSetItem> {
 
-
+    Url url=new Url();
     ArrayList<GetSetItem> getSetItems;
     Context context;
     int resource;
@@ -47,9 +47,9 @@ public class ItemAdapter extends ArrayAdapter<GetSetItem> {
             convertView = layoutInflater.inflate(R.layout.events_item, null, true);
         }
         GetSetItem getset = getItem(position);
-        String imgurl1 = "https://tanonexecutioner.000webhostapp.com/upload/events/" + getset.getImageEvent1Item();
-        String imgurl2 = "https://tanonexecutioner.000webhostapp.com/upload/events/" + getset.getImageEvent2Item();
-        String imgurl3 = "https://tanonexecutioner.000webhostapp.com/upload/events/" + getset.getImageEvent3Item();
+        String imgurl1 = url.imgevent + getset.getImageEvent1Item();
+        String imgurl2 = url.imgevent + getset.getImageEvent2Item();
+        String imgurl3 = url.imgevent + getset.getImageEvent3Item();
 
 
         ImageView imageView1 = (ImageView) convertView.findViewById(R.id.imgevent1_item);

@@ -1,8 +1,8 @@
-<RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:layout_height="match_parent">
 
     <fragment xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:map="http://schemas.android.com/apk/res-auto"
@@ -16,27 +16,28 @@
 
 
     <AutoCompleteTextView
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:hint="Places...???"
-        android:ems="10"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:id="@+id/editTextmap"
         android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="Places...???"
+        android:inputType="textPersonName"
+        android:textSize="@dimen/font_size"
 
-     />
+        />
 
     <ImageView
-        android:layout_width="40dp"
-        app:srcCompat="@drawable/seach"
         android:id="@+id/btn_search"
-        android:layout_alignBottom="@+id/editTextmap"
-        android:layout_toRightOf="@+id/editTextmap"
-        android:layout_toEndOf="@+id/editTextmap"
+        android:layout_width="40dp"
         android:layout_height="40dp"
+        android:layout_alignBottom="@+id/editTextmap"
+        android:layout_toEndOf="@+id/editTextmap"
+        android:layout_toRightOf="@+id/editTextmap"
+        app:srcCompat="@drawable/seach"
 
         />
 

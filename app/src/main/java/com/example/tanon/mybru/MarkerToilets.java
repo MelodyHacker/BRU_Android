@@ -21,9 +21,10 @@ import java.net.URLConnection;
  */
 
 public class MarkerToilets extends AppCompatActivity {
-
+    Url url = new Url();
     ProgressDialog mProgressDialog;
     String[] ar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,7 +36,7 @@ public class MarkerToilets extends AppCompatActivity {
             @Override
             public void run() {
                 //avd  10.0.2.2.json.php
-                new MarkerToilets.ReadJSON().execute("https://tanonexecutioner.000webhostapp.com/JsonToilets.php");
+                new MarkerToilets.ReadJSON().execute(url.jsontoilte);
             }
         });
 
@@ -54,14 +55,14 @@ public class MarkerToilets extends AppCompatActivity {
             try {
                 JSONObject jsonObject = new JSONObject(content);
                 JSONArray jsonArray = jsonObject.getJSONArray("toilets");
-                int x=0;
-                ar=new String[jsonArray.length()*3];
+                int x = 0;
+                ar = new String[jsonArray.length() * 3];
                 for (int i = 0; i < jsonArray.length(); i++) {
                     JSONObject MarkObject = jsonArray.getJSONObject(i);
                     ar[x] = MarkObject.getString("toilet_name");
-                    ar[x+1] = MarkObject.getString("toilet_lat");
-                    ar[x+2] = MarkObject.getString("toilet_long");
-                    x=x+3;
+                    ar[x + 1] = MarkObject.getString("toilet_lat");
+                    ar[x + 2] = MarkObject.getString("toilet_long");
+                    x = x + 3;
                 }
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -71,7 +72,7 @@ public class MarkerToilets extends AppCompatActivity {
             mProgressDialog.dismiss();
             ///////////////////////////////////////////////////////////////
             Intent intent = new Intent(MarkerToilets.this, MapsToilet.class);
-            intent.putExtra("arrayMarkerToilet",ar);
+            intent.putExtra("arrayMarkerToilet", ar);
             startActivity(intent);
         }
     }

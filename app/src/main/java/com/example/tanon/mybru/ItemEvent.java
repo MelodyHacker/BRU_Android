@@ -33,7 +33,7 @@ public class ItemEvent extends AppCompatActivity {
     JSONArray array;
     String ct;
     int po;
-
+Url url=new Url();
     ItemAdapter itemAdapter;
 
     @Override
@@ -56,7 +56,7 @@ public class ItemEvent extends AppCompatActivity {
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                new ReadJSON().execute("https://tanonexecutioner.000webhostapp.com/JsonEvents.php");
+                new ReadJSON().execute(url.jsonevent);
             }
         });
         // ATTENTION: This was auto-generated to implement the App Indexing API.

@@ -19,7 +19,7 @@ import java.util.ArrayList;
 
 public class EventAdapter extends ArrayAdapter<GetSetEvent> {
 
-
+    Url url = new Url();
     ArrayList<GetSetEvent> getSetEvents;
     Context context;
     int resource;
@@ -47,7 +47,7 @@ public class EventAdapter extends ArrayAdapter<GetSetEvent> {
             convertView = layoutInflater.inflate(R.layout.listview_events, null, true);
         }
         GetSetEvent getset = getItem(position);
-        String imgurl = "https://tanonexecutioner.000webhostapp.com/upload/events/" + getset.getImageEvent1();
+        String imgurl = url.imgevent + getset.getImageEvent1();
 
 
         ImageView imageView1 = (ImageView) convertView.findViewById(R.id.imgevent1);

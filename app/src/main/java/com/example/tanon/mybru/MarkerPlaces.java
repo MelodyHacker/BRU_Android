@@ -21,10 +21,9 @@ import java.net.URLConnection;
  */
 
 public class MarkerPlaces extends AppCompatActivity {
-
-
     ProgressDialog mProgressDialog;
     String[] ar;
+    Url url=new Url();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,13 +33,12 @@ public class MarkerPlaces extends AppCompatActivity {
             @Override
             public void run() {
                 //avd  10.0.2.2.json.php
-                new MarkerPlaces.ReadJSON().execute("https://tanonexecutioner.000webhostapp.com/JsonPlaces.php");
+                new MarkerPlaces.ReadJSON().execute(url.jsonplace);
             }
         });
         Toast.makeText(MarkerPlaces.this, "สถานที่",
                 Toast.LENGTH_LONG).show();
     }
-
 
     class ReadJSON extends AsyncTask<String, Integer, String> {
 
@@ -54,14 +52,14 @@ public class MarkerPlaces extends AppCompatActivity {
             try {
                 JSONObject jsonObject = new JSONObject(content);
                 JSONArray jsonArray = jsonObject.getJSONArray("places");
-                int x=0;
-                ar=new String[jsonArray.length()*3];
+                int x = 0;
+                ar = new String[jsonArray.length() * 3];
                 for (int i = 0; i < jsonArray.length(); i++) {
                     JSONObject MarkObject = jsonArray.getJSONObject(i);
                     ar[x] = MarkObject.getString("place_name");
-                    ar[x+1] = MarkObject.getString("lat_location");
-                    ar[x+2] = MarkObject.getString("long_location");
-                    x=x+3;
+                    ar[x + 1] = MarkObject.getString("lat_location");
+                    ar[x + 2] = MarkObject.getString("long_location");
+                    x = x + 3;
                 }
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -70,8 +68,8 @@ public class MarkerPlaces extends AppCompatActivity {
                     Toast.LENGTH_LONG).show();
             mProgressDialog.dismiss();
             ///////////////////////////////////////////////////////////////
-            Intent intent = new Intent(MarkerPlaces.this, MapsActivity.class);
-            intent.putExtra("arrayMarker",ar);
+            Intent intent = new Intent(MarkerPlaces.this, MainMap.class);
+            intent.putExtra("arrayMarker", ar);
             startActivity(intent);
         }
     }
@@ -80,7 +78,6 @@ public class MarkerPlaces extends AppCompatActivity {
     private static String readURL(String theUrl) {
         StringBuilder content = new StringBuilder();
         try {
-
             URL url = new URL(theUrl);
             URLConnection urlConnection = url.openConnection();
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
@@ -96,25 +93,18 @@ public class MarkerPlaces extends AppCompatActivity {
     }
 
     private class DownloadJSON extends AsyncTask<Void, Void, Void> {
-
         @Override
         protected Void doInBackground(Void... params) {
-
             return null;
         }
 
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            // Create a progressdialog
             mProgressDialog = new ProgressDialog(MarkerPlaces.this);
-            // Set progressdialog title
-
             mProgressDialog.setMessage("โปรดรอกำลังโหลดแผนที่...");
             mProgressDialog.setIndeterminate(false);
-            // Show progressdialog
             mProgressDialog.show();
-
         }
     }
 
