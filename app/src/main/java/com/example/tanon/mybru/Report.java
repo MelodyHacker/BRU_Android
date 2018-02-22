@@ -28,7 +28,7 @@ public class Report extends Activity {
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.report_activity);
+        setContentView(R.layout.activity_report);
         requestQueue = Volley.newRequestQueue(getApplicationContext());
         final EditText editText = (EditText) findViewById(R.id.report_name);
         ImageView btn_sent = (ImageView) findViewById(R.id.report_sent);

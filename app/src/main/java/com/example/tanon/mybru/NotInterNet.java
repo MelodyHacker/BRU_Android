@@ -16,7 +16,7 @@ public class NotInterNet extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.not_internet);
+        setContentView(R.layout.activity_not_internet);
         final ImageView imageView = (ImageView) findViewById(R.id.again);
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override

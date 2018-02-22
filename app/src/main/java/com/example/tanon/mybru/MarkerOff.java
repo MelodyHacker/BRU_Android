@@ -34,7 +34,7 @@ public class MarkerOff extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.admod);
+        setContentView(R.layout.activity_admod);
         if (isNetworkConnected() == true) {
 
             new MarkerOff.DownloadJSON().execute();

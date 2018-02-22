@@ -69,7 +69,6 @@ public class MapsToilet extends AppCompatActivity implements OnMapReadyCallback,
         }
 
 
-
         item = new String[arMap.length / 3];
         int i = 0;
         for (int x = 0; x < arMap.length; x++) {
@@ -95,8 +94,8 @@ public class MapsToilet extends AppCompatActivity implements OnMapReadyCallback,
         autoCompleteTextView.setOnItemClickListener(this);
         autoCompleteTextView.setImeOptions(EditorInfo.IME_ACTION_DONE);
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        ImageView imageView = (ImageView) findViewById(R.id.btn_search);
-        imageView.setOnClickListener(new View.OnClickListener() {
+        ImageView btn_search = (ImageView) findViewById(R.id.btn_search);
+        btn_search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 InputMethodManager inputManager = (InputMethodManager)
@@ -118,7 +117,8 @@ public class MapsToilet extends AppCompatActivity implements OnMapReadyCallback,
                         lng = Double.parseDouble(arMapak[c + 2]);
                         LatLng position = new LatLng(lat, lng);
                         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(lat, lng), zoom));
-                        marker = mMap.addMarker(new MarkerOptions().position(position).title(arMapak[c]));
+                        marker = mMap.addMarker(new MarkerOptions().position(position).icon(BitmapDescriptorFactory
+                                .defaultMarker(BitmapDescriptorFactory.HUE_AZURE)).title(arMapak[c]));
                         marker.showInfoWindow();
                         autoCompleteTextView.setImeOptions(EditorInfo.IME_ACTION_DONE);
                     }

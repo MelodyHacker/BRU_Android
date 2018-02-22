@@ -27,7 +27,7 @@ public class MarkerPlaces extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.admod);
+        setContentView(R.layout.activity_admod);
         new MarkerPlaces.DownloadJSON().execute();
         runOnUiThread(new Runnable() {
             @Override
@@ -68,7 +68,7 @@ public class MarkerPlaces extends AppCompatActivity {
                     Toast.LENGTH_LONG).show();
             mProgressDialog.dismiss();
             ///////////////////////////////////////////////////////////////
-            Intent intent = new Intent(MarkerPlaces.this, MainMap.class);
+            Intent intent = new Intent(MarkerPlaces.this, MapPlaces.class);
             intent.putExtra("arrayMarker", ar);
             startActivity(intent);
         }

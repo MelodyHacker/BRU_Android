@@ -28,7 +28,7 @@ public class MarkerToilets extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.admod);
+        setContentView(R.layout.activity_admod);
 
 
         new MarkerToilets.DownloadJSON().execute();

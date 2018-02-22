@@ -61,7 +61,7 @@
 
 
         <activity
-            android:name=".MainMap"
+            android:name=".MapPlaces"
             android:label="@string/title_activity_maps2"></activity>
     </application>
 
