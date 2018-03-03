@@ -3,12 +3,10 @@ package com.example.tanon.mybru;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -21,27 +19,18 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-import android.view.KeyEvent;
-import android.view.inputmethod.EditorInfo;
-import android.widget.TextView;
 
-/**
- * Created by MelodyHacker on 10/30/2017.
- */
-
-public class MapsToilet extends AppCompatActivity implements OnMapReadyCallback, AdapterView.OnItemSelectedListener, AdapterView.OnItemClickListener {
+public class MapPlaces extends AppCompatActivity implements OnMapReadyCallback, AdapterView.OnItemSelectedListener, AdapterView.OnItemClickListener {
     GoogleMap mMap;
     float zoom = 17;
     String[] arMapak;
     AutoCompleteTextView autoCompleteTextView = null;
-    ArrayAdapter<String> adapter;
+    private ArrayAdapter<String> adapter;
     String item[];
-    String latst = null, lngst = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,25 +40,35 @@ public class MapsToilet extends AppCompatActivity implements OnMapReadyCallback,
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-        Toast.makeText(MapsToilet.this, "ห้องน้ำ",
-                Toast.LENGTH_LONG).show();
 
     }
+
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
         Marker marker;
         Bundle bundle = getIntent().getExtras();
-        String[] arMap = bundle.getStringArray("arrayMarkerToilet");
-        arMapak = arMap;
-        if (arMap == null) {
-            Intent intent = new Intent(MapsToilet.this, NotInterNet.class);
+        String[] arMap = bundle.getStringArray("arrayMarker");
+        if (arMap==null){
+            Intent intent = new Intent(MapPlaces.this, NotInterNet.class);
             startActivity(intent);
         }
-
-
+        arMapak = arMap;
         item = new String[arMap.length / 3];
+
+        if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+        }
+        mMap.setMyLocationEnabled(true);
+///////////////////////////////////////////////////
         int i = 0;
         for (int x = 0; x < arMap.length; x++) {
             String name = arMap[x];
@@ -79,21 +78,21 @@ public class MapsToilet extends AppCompatActivity implements OnMapReadyCallback,
             x = x + 2;
             LatLng position = new LatLng(lat, lng);
             mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(lat, lng), zoom));
-            marker = mMap.addMarker(new MarkerOptions().position(position).icon(BitmapDescriptorFactory
-                    .defaultMarker(BitmapDescriptorFactory.HUE_AZURE)).title(name));
+            marker = mMap.addMarker(new MarkerOptions().position(position).title(name));
             i++;
         }
         LatLng position = new LatLng(14.990395303361007, 103.10022532939911);
         mMap.moveCamera(CameraUpdateFactory.newLatLng(position));
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
         autoCompleteTextView = (AutoCompleteTextView) findViewById(R.id.editTextmap);
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, item);
         autoCompleteTextView.setThreshold(1);
         autoCompleteTextView.setAdapter(adapter);
         autoCompleteTextView.setOnItemSelectedListener(this);
         autoCompleteTextView.setOnItemClickListener(this);
-        autoCompleteTextView.setImeOptions(EditorInfo.IME_ACTION_DONE);
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
         ImageView btn_search = (ImageView) findViewById(R.id.btn_search);
         btn_search.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -117,24 +116,12 @@ public class MapsToilet extends AppCompatActivity implements OnMapReadyCallback,
                         lng = Double.parseDouble(arMapak[c + 2]);
                         LatLng position = new LatLng(lat, lng);
                         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(lat, lng), zoom));
-                        marker = mMap.addMarker(new MarkerOptions().position(position).icon(BitmapDescriptorFactory
-                                .defaultMarker(BitmapDescriptorFactory.HUE_AZURE)).title(arMapak[c]));
+                        marker = mMap.addMarker(new MarkerOptions().position(position).title(arMapak[c]));
                         marker.showInfoWindow();
                     }
                 }
             }
         });
-        if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
-            return;
-        }
-        mMap.setMyLocationEnabled(true);
     }
 
     @Override

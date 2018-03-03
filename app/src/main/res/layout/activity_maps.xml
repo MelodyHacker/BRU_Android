@@ -24,10 +24,9 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="10dp"
         android:ems="10"
-        android:hint="Places...???"
+        android:hint="@string/hit_place"
         android:inputType="textPersonName"
         android:textSize="@dimen/font_size"
-
         />
 
     <ImageView

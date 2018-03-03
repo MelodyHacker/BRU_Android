@@ -34,8 +34,7 @@ public class NotInterNet extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        Toast.makeText(NotInterNet.this, "คุณไม่ได้เชื่อมต่ออินเตอร์เน็ต", Toast.LENGTH_LONG).show();
-        Toast.makeText(NotInterNet.this, "ลองอีกครั้ง", Toast.LENGTH_LONG).show();
+        Toast.makeText(NotInterNet.this, "เชื่อมต่ออินเตอร์เน็ตมีปัญหา ลองอีกครั้ง", Toast.LENGTH_LONG).show();
         Toast.makeText(NotInterNet.this, "หรือระบบมีปัญหาโปรดรายงานปัญหาจากปุ่ม Report", Toast.LENGTH_LONG).show();
     }
 }

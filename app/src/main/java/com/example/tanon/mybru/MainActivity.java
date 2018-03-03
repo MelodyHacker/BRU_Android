@@ -3,7 +3,6 @@ package com.example.tanon.mybru;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
@@ -65,7 +64,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                anim(imgmap_show, "โปรดหลีกเลี่ยงเส้นทางดังต่อไปนี้");
+                anim(imgmap_show, "โปรดหลีกเลี่ยงเส้นทางที่มี Marker ดังต่อไปนี้");
             }
         }, 1000);
         final ImageView into = (ImageView) findViewById(R.id.into);
@@ -106,7 +105,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         imgevent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, MainEvent.class);
+                Intent intent = new Intent(MainActivity.this, EventItemLoader.class);
                 startActivity(intent);
             }
         });

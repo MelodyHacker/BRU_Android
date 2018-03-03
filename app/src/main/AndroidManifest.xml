@@ -47,18 +47,17 @@
         <activity
             android:name="com.example.tanon.mybru.MapsActivity"
             android:label="@string/title_activity_maps"></activity>
-        <activity android:name=".MainEvent" />
-        <activity android:name=".ItemEvent" />
+        <activity android:name=".EventItemLoader" />
+        <activity android:name=".EventAllData" />
         <activity android:name=".MarkerPlaces" />
         <activity android:name=".MapsToilet" />
         <activity android:name=".MarkerToilets" />
         <activity android:name=".MainActivity" />
         <activity android:name=".CallPhone" />
-        <activity android:name=".Phone" />
+        <activity android:name=".Phone"/>
         <activity android:name=".NotInterNet" />
         <activity android:name=".Into"/>
         <activity android:name=".Report"/>
-
 
         <activity
             android:name=".MapPlaces"

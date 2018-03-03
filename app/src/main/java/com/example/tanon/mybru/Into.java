@@ -56,7 +56,6 @@ public class Into extends AppCompatActivity implements OnMapReadyCallback {
         imgreport.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 anim(imgreport, "คุณสามารถรายงานข้อผิดพลาดของระบบหรือข้อมูลไปยังผู้ดูแลระบบได้จากปุ้มนี้");
             }
         });
@@ -71,14 +70,14 @@ public class Into extends AppCompatActivity implements OnMapReadyCallback {
         imgmap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                anim(imgmap, "สามารถหาสถานที่ต่าง ๆ ได้จากตรงนี้นะจ้ะ..และอย่าลืมหากต้องการให้เรานำทางเลือกสถานที่ก่อนแล้วกดปุ่มมุมล่างขวา");
+                anim(imgmap, "สามารถหาสถานที่ต่าง ๆ ได้จากตรงนี้นะจ้ะ..และอย่าลืมหากต้องการให้เรานำทางเลือกสถานทีและ กดเลือกที่ Markerก่อนแล้วกดปุ่มมุมล่างขวาเพื่อนำทาง");
             }
         });
         final ImageView imgtoilet = (ImageView) findViewById(R.id.toilet);
         imgtoilet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                anim(imgtoilet, "ปวดเบาใช่ไหม หรือปวดหนักปุ่มนี้ซิ..และอย่าลืมหากต้องการให้เรานำทางเลือกสถานที่ก่อนแล้วกดปุ่มมุมล่างขวา");
+                anim(imgtoilet, "ปวดเบาใช่ไหม หรือปวดหนักปุ่มนี้ซิ..และอย่าลืมหากต้องการให้เรานำทางเลือกสถานทีและกดเลือกที่ Marker่ก่อนแล้วกดปุ่มมุมล่างขวาเพื่อนำทาง");
             }
         });
         final ImageView imgphone = (ImageView) findViewById(R.id.callphone);

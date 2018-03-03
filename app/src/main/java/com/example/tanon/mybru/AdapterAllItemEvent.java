@@ -17,16 +17,15 @@ import java.util.ArrayList;
  * Created by MelodyHacker on 10/16/2017.
  */
 
-public class ItemAdapter extends ArrayAdapter<GetSetItem> {
+public class AdapterAllItemEvent extends ArrayAdapter<GetSetItem> {
 
     Url url=new Url();
     ArrayList<GetSetItem> getSetItems;
     Context context;
     int resource;
-    public int ck;
     public String lat, lng;
 
-    public ItemAdapter(Context context, int resource, ArrayList<GetSetItem> getSetItems) {
+    public AdapterAllItemEvent(Context context, int resource, ArrayList<GetSetItem> getSetItems) {
         super(context, resource, getSetItems);
         this.getSetItems = getSetItems;
         this.context = context;
@@ -34,17 +33,13 @@ public class ItemAdapter extends ArrayAdapter<GetSetItem> {
 
     }
 
-
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-///////////////////////////////
-        ck = position;
-//////////////////////////////
 
         if (convertView == null) {
             LayoutInflater layoutInflater = (LayoutInflater) getContext()
                     .getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
-            convertView = layoutInflater.inflate(R.layout.events_item, null, true);
+            convertView = layoutInflater.inflate(R.layout.item_event, null, true);
         }
         GetSetItem getset = getItem(position);
         String imgurl1 = url.imgevent + getset.getImageEvent1Item();

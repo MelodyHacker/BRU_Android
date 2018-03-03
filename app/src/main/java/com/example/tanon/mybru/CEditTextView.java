@@ -7,25 +7,29 @@ package com.example.tanon.mybru;
 import android.content.Context;
 import android.graphics.Typeface;
 import android.util.AttributeSet;
+import android.widget.AutoCompleteTextView;
+import android.widget.EditText;
 
 /**
  * Created by korrio on 11/12/2017 AD.
  */
 
-public class CTextView extends android.support.v7.widget.AppCompatTextView {
+class CEditTextView extends android.support.v7.widget.AppCompatAutoCompleteTextView {
     int mystyle;
 
-    public CTextView(Context context) {
+    public CEditTextView(Context context) {
         super(context);
+
         applyCustomFont(context);
     }
 
-    public CTextView(Context context, AttributeSet attrs) {
+    public CEditTextView(Context context, AttributeSet attrs) {
         super(context, attrs);
+
         applyCustomFont(context);
     }
 
-    public CTextView(Context context, AttributeSet attrs, int defStyle) {
+    public CEditTextView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         applyCustomFont(context);
     }
@@ -33,6 +37,7 @@ public class CTextView extends android.support.v7.widget.AppCompatTextView {
     private void applyCustomFont(Context context) {
         Typeface NormalFont = FontCache.getTypeface("fonts/helvethaix.ttf", context);
         setTypeface(NormalFont);
+
     }
 
 }

@@ -21,7 +21,7 @@ import java.util.ArrayList;
  * Created by MelodyHacker on 10/16/2017.
  */
 
-public class PhoneAdapter extends ArrayAdapter<GetSetPhone> {
+public class AdapterPhone extends ArrayAdapter<GetSetPhone> {
 
 
     ArrayList<GetSetPhone> getSetPhones;
@@ -30,9 +30,8 @@ public class PhoneAdapter extends ArrayAdapter<GetSetPhone> {
     public int ck;
     Url url = new Url();
 
-    public PhoneAdapter(Context context, int resource, ArrayList<GetSetPhone> getSetPhones) {
-        super(context, resource, getSetPhones);
-
+    public AdapterPhone(Context context, int resource, ArrayList<GetSetPhone> getSetPhones) {
+       super(context, resource, getSetPhones);
         this.getSetPhones = getSetPhones;
         this.context = context;
         this.resource = resource;

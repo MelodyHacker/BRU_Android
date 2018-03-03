@@ -17,7 +17,7 @@ import java.util.ArrayList;
  * Created by MelodyHacker on 10/16/2017.
  */
 
-public class EventAdapter extends ArrayAdapter<GetSetEvent> {
+public class AdapterEvents extends ArrayAdapter<GetSetEvent> {
 
     Url url = new Url();
     ArrayList<GetSetEvent> getSetEvents;
@@ -26,9 +26,8 @@ public class EventAdapter extends ArrayAdapter<GetSetEvent> {
     public int ck;
 
 
-    public EventAdapter(Context context, int resource, ArrayList<GetSetEvent> getSetEvents) {
+    public AdapterEvents(Context context, int resource, ArrayList<GetSetEvent> getSetEvents) {
         super(context, resource, getSetEvents);
-
         this.getSetEvents = getSetEvents;
         this.context = context;
         this.resource = resource;
@@ -44,7 +43,7 @@ public class EventAdapter extends ArrayAdapter<GetSetEvent> {
         if (convertView == null) {
             LayoutInflater layoutInflater = (LayoutInflater) getContext()
                     .getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
-            convertView = layoutInflater.inflate(R.layout.listview_events, null, true);
+            convertView = layoutInflater.inflate(R.layout.item_events_view_all, null, true);
         }
         GetSetEvent getset = getItem(position);
         String imgurl = url.imgevent + getset.getImageEvent1();

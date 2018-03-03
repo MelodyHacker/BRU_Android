@@ -6,7 +6,7 @@ package com.example.tanon.mybru;
 
 public class Url {
 
-//    public String check_event="";
+
 //    public String imgevent = "http://192.168.99.3/bru/upload/events/";
 //    public String jsonevent = "http://192.168.99.3/bru/JsonEvents.php";
 //    public String report = "http://192.168.99.3/bru/Report.php";
@@ -18,6 +18,8 @@ public class Url {
 //    public String jsonphone = "http://192.168.99.3/bru/JsonPhones.php";
 //    public String imgphone = "http://192.168.99.3/bru/upload/phones/";
 
+
+//
 //    public String imgevent = "http://10.0.2.2/bru/upload/events/";
 //    public String jsonevent = "http://10.0.2.2/bru/JsonEvents.php";
 //    public String report = "http://10.0.2.2/bru/Report.php";
@@ -28,7 +30,9 @@ public class Url {
 //    public String jsontoilte = "http://10.0.2.2/bru/JsonToilets.php";
 //    public String jsonphone = "http://10.0.2.2/bru/JsonPhones.php";
 //    public String imgphone = "http://10.0.2.2/bru/upload/phones/";
-//
+
+
+
 
     public String imgevent = "https://tanonexecutioner.000webhostapp.com/upload/events/";
     public String jsonevent = "https://tanonexecutioner.000webhostapp.com/JsonEvents.php";
@@ -40,4 +44,6 @@ public class Url {
     public String jsontoilte = "https://tanonexecutioner.000webhostapp.com/JsonToilets.php";
     public String jsonphone = "https://tanonexecutioner.000webhostapp.com/JsonPhones.php";
     public String imgphone = "https://tanonexecutioner.000webhostapp.com/upload/phones/";
+
+
 }
